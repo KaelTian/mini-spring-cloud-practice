@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: consumer-application
+
+  cloud:
+    tutu:
+      discovery:
+        server-addr: localhost:6688
+        service: ${spring.application.name}
