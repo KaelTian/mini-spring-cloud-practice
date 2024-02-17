@@ -1,13 +1,19 @@
 package com.github.cloud.loadbalancer.ribbon.config;
 
 import com.netflix.client.config.DefaultClientConfigImpl;
-import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import com.netflix.client.config.IClientConfig;
 
+/**
+ * 配置ribbon默认组件
+ *
+ * @author derek(易仁川)
+ * @date 2022/3/22
+ */
 @Configuration
 public class RibbonClientConfiguration {
 
@@ -67,3 +73,33 @@ public class RibbonClientConfiguration {
                 serverListFilter, serverListUpdater);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

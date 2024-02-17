@@ -19,6 +19,7 @@
         <module>mini-spring-cloud-examples/mini-spring-cloud-provider-example</module>
         <module>mini-spring-cloud-examples/mini-spring-cloud-consumer-examples</module>
         <module>mini-spring-cloud-load-balancer</module>
+        <module>mini-spring-cloud-examples/mini-spring-cloud-provider1-example</module>
     </modules>
 
     <properties>

@@ -5,7 +5,6 @@ import com.github.cloud.loadbalancer.ribbon.RibbonLoadBalancerClient;
 import com.github.cloud.loadbalancer.ribbon.SpringClientFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +12,14 @@ import org.springframework.context.annotation.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author derek(易仁川)
+ * @date 2022/3/22
+ */
 @Configuration
 public class RibbonAutoConfiguration {
-    @Autowired
+
+    @Autowired(required = false)
     private List<RibbonClientSpecification> configurations = new ArrayList<>();
 
     @Bean

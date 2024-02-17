@@ -53,11 +53,11 @@ public class ConsumerApplication {
 
         @GetMapping("/hello")
         public String hello() {
-            List<ServiceInstance> serviceInstances = discoveryClient.getInstances("provider-application");
+            List<ServiceInstance> serviceInstances = discoveryClient.getInstances("provider-application-another");
             if (serviceInstances.size() > 0) {
                 ServiceInstance serviceInstance = serviceInstances.get(0);
                 URI uri = serviceInstance.getUri();
-                String response = restTemplate.postForObject(uri.toString() + "/echo", null, String.class);
+                String response = restTemplate.postForObject(uri.toString() + "/echo1", null, String.class);
                 return response;
             }
             throw new RuntimeException("No service instance for provider-application found");
@@ -78,6 +78,11 @@ public class ConsumerApplication {
         @GetMapping("/foo")
         public String foo() {
             return loadBalancedRestTemplate.postForObject("http://provider-application/echo", null, String.class);
+        }
+
+        @GetMapping("/foo1")
+        public String foo1() {
+            return loadBalancedRestTemplate.postForObject("http://provider-application-another/echo1", null, String.class);
         }
     }
 }
